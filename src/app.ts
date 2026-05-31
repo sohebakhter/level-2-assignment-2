@@ -4,6 +4,8 @@ import express, {
   type Response,
 } from "express";
 import cors from "cors";
+import { authRouter } from "./modules/auth/auth.route";
+import globalErrorHandler from "./middleware/globalErrorHandler";
 
 const app: Application = express();
 
@@ -16,4 +18,10 @@ app.get("/", (req: Request, res: Response) => {
   res.send("DevPulse Express Server is running!");
 });
 
+app.use("/api/auth", authRouter);
+// app.use("/api/issues");
+// app.use("/api/users");
+
+// Global Error Handling Middleware (it should stay at the bottom of the middleware stack)
+app.use(globalErrorHandler);
 export default app;
