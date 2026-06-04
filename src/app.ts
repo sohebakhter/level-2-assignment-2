@@ -6,6 +6,7 @@ import express, {
 import cors from "cors";
 import { authRouter } from "./modules/auth/auth.route";
 import globalErrorHandler from "./middleware/globalErrorHandler";
+import { issueRouter } from "./modules/issues/issue.route";
 
 const app: Application = express();
 
@@ -19,7 +20,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/api/auth", authRouter);
-// app.use("/api/issues");
+app.use("/api/issues", issueRouter);
 // app.use("/api/users");
 
 // Global Error Handling Middleware (it should stay at the bottom of the middleware stack)
