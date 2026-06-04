@@ -113,5 +113,3 @@ Base URL: `/api`
 - If you want foreign key enforcement, add `FOREIGN KEY (reporter_id) REFERENCES users(id)` to the `issues` table.
 
 ---
-
-If you want, I can: commit the README, add example curl commands, or expand the API docs with response examples.
