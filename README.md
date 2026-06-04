@@ -1,6 +1,6 @@
 # DevPulse
 
-Live URL: https://your-live-url.example.com  
+Live URL: https://soheb-devpulse.vercel.app
 
 ## Features
 
@@ -21,6 +21,7 @@ Live URL: https://your-live-url.example.com
 ## Setup
 
 Prerequisites:
+
 - Node.js 18+ and npm
 - PostgreSQL
 
@@ -77,6 +78,7 @@ Base URL: `/api`
 - POST `/api/issues`
   - Creates a new issue. Protected route — requires `Authorization` header with `Bearer <token>`.
   - Body (application/json):
+
     ```json
     {
       "title": "Page crashes on submit",
