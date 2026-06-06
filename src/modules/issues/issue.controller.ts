@@ -37,6 +37,7 @@ const createIssue = async (req: Request, res: Response) => {
 const getAllIssues = async (req: Request, res: Response) => {
     try {
 
+        //query parameters coming from url
         const sort = req.query.sort as string;
         const type = req.query.type as string;
         const status = req.query.status as string;

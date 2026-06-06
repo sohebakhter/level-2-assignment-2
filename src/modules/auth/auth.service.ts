@@ -42,7 +42,7 @@ const loginUserIntoDB = async (payload: IUser) => {
 
   const jwtPayload = { id: user.rows[0].id, email: user.rows[0].email, role: user.rows[0].role };
 
-
+  //creating token while login
   const accessToken = jwt.sign(jwtPayload, config.secret, { expiresIn: "1d" });
 
   delete user.rows[0].password;

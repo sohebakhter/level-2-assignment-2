@@ -29,6 +29,7 @@ const getAllIssuesFromDB = async ({
     type?: string;
     status?: string;
 }) => {
+    // query parameters
     const values: string[] = [];
     const conditions: string[] = [];
 
@@ -189,6 +190,7 @@ const deleteIssueFromDB = async (issueId: number, role: string) => {
         throw new Error("Issue not found");
     }
 
+    // Only maintainers can delete issues
     if (role !== "maintainer") {
         throw new Error("Only maintainers can delete issues");
     }
